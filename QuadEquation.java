@@ -37,6 +37,9 @@ public class QuadEquation extends JFrame {
         
         //I will add listeners here at some point
         random.addActionListener(Quad);
+        manual.addActionListener(Quad);
+        solvebutton.addActionListener(Quad);
+        resetbutton.addActionListener(Quad);
         
         //Adding row1 to the frame
         FlowLayout flo = new FlowLayout(FlowLayout.CENTER);
