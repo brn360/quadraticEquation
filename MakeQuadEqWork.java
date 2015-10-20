@@ -20,15 +20,42 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
         if(command.equals("Reset")) {
             clearAllFields();
         }
+        if(command.equals("Random Numbers")) {
+            addRandomNumbers();
+        }
     }
     
-    void startSolving() {
+    public void addRandomNumbers() {
+            int num1;
+            int num2;
+            int num3;
+            
+            num1 = (int)Math.floor(Math.random()*50 + 1);
+            num2 = (int)Math.floor(Math.random()*50 + 1);
+            num3 = (int)Math.floor(Math.random()*50 + 1);
+            
+            gui.inputboxes[0].setText("" + num1);
+            gui.inputboxes[1].setText("" + num2);
+            gui.inputboxes[2].setText("" + num3);
+    }
+    
+    public void startSolving() {
         playing = new Thread(this);
         playing.start();
         gui.solvebutton.setEnabled(false);
         gui.resetbutton.setEnabled(true);
         gui.manual.setEnabled(true);
         gui.random.setEnabled(true);
+        
+        float a = Integer.parseInt("0" + gui.inputboxes[0].getText());
+        float b = Integer.parseInt("0" + gui.inputboxes[1].getText());
+        float c = Integer.parseInt("0" + gui.inputboxes[2].getText());
+        
+        float answer1 = -b + Math.sqrt((b * b)-4 * a * c)/(2 * a);
+        float answer2 = -b - Math.sqrt((b * b)-4 * a * c)/(2 * a);
+        
+        gui.answerone.setText("" + answer1);
+        gui.answertwo.setText("" + answer2);
     }
     
     void clearAllFields() {
@@ -37,23 +64,7 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
         }
         gui.answerone.setText(null);
         gui.answertwo.setText(null);
-    }
-    
-    public void actionPerfomed(ActionEvent event) {
-        String command = event.getActionCommand();
-        if(command.equals("Random Numbers")) {
-            for(int i = 0; i < 3; i++) {
-                int pick;
-                do {
-                    pick = (int)Math.floor(Math.random()*50 + 1);
-                } while (numberGone(pick, gui.inputboxes, i));
-                gui.inputboxes[i].setText("" + pick);
-            }
-        } else {
-            for(int i = 0; i < 3; i++) {
-                gui.inputboxes[i].setText(null);
-            }
-        }
+        gui.solvebutton.setEnabled(true);
     }
     
     void addOneToField(JTextField field) {
@@ -72,12 +83,12 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
         return false;
         }
     
+    @Override
     public void run() {
         Thread thisThread = Thread.currentThread();
         
         while(playing == thisThread) {
             
-            //float a = inputboxes[0].getText();
         }
     }
     
