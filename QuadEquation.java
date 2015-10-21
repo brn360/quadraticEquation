@@ -23,8 +23,8 @@ public class QuadEquation extends JFrame {
     
     //Setting up row 4 with two textfields
     JPanel row4 = new JPanel();
-    JTextField answerone = new JTextField(5);
-    JTextField answertwo = new JTextField(5);
+    JTextField answerone = new JTextField(10);
+    JTextField answertwo = new JTextField(10);
     
     //Creating the frame of the gui and adding everything to it
     public QuadEquation() {
