@@ -7,6 +7,10 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
     QuadEquation gui;
     Thread playing;
     
+    float answer1;
+    float answer2;
+    String easteregg = "";
+    
     //This links the gui
     public MakeQuadEqWork(QuadEquation in) {
         gui = in;
@@ -20,6 +24,7 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
         //Solve button
         if(command.equals("Solve")) {
             startSolving();
+            randomness();
         }
         //Reset button
         if(command.equals("Reset")) {
@@ -72,37 +77,44 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
         float answer1 = (float) (((-b) + Math.sqrt(((b * b)-(4 * a * c))))/(2 * a));
         float answer2 = (float) (((-b) - Math.sqrt(((b * b)-(4 * a * c))))/(2 * a));
         
-        //Randomness
-        if(answer1 = 420) {
-            gui.answerone.setText("Dank Memes");
-        }
-        if(answer2 = 420) {
-            gui.answertwo.setText("Dank Memes");
-        }
-        if(answer1 = 9) {
-            gui.answerone.setText("Mr. Skeltal");
-        }
-        if(answer2 = 9) {
-            gui.answertwo.setText("Mr. Skeltal");
-        }
-        if(answer1 = 69) {
-            gui.answerone.setText("");
-        }
-        if(answer2 = 69) {
-            gui.answertwo.setText("");
-        }
-        if(answer1 = .81) {
-            gui.answerone.setText("Asadi");
-        }
-        if(answer2 = .81) {
-            gui.answertwo.setText("Asadi");
-        }
+        randomness();
         
         //Sets the answers to the textfields
-        gui.answerone.setText("" + answer1);
-        gui.answertwo.setText("" + answer2);
+        gui.answerone.setText("" + answer1 + easteregg);
+        gui.answertwo.setText("" + answer2 + easteregg);
         
         checkAnswer();
+    }
+    
+    public void randomness() {
+        //Randomness
+        answer2 = answer2;
+        answer1 = answer1;
+        if(answer1 == 420) {
+            easteregg = ("Dank Memes");
+        }
+        if(answer2 == 420) {
+            easteregg = ("Dank Memes");
+        }
+        if(answer1 == 9) {
+            gui.answerone.setText("Mr. Skeltal");
+        }
+        if(answer2 == 9) {
+            gui.answertwo.setText("Mr. Skeltal");
+        }
+        if(answer1 == 69) {
+            gui.answerone.setText("");
+        }
+        if(answer2 == 69) {
+            gui.answertwo.setText("");
+        }
+        if(answer1 == .81) {
+            easteregg = "Asadi";
+        }
+        if(answer2 == .81) {
+            easteregg = "Asadi";
+            System.out.println("Working");
+        }
     }
     
     //The code that runs when the reset button is clicked
