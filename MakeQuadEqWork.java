@@ -56,8 +56,12 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
         double b = Double.parseDouble(gui.inputboxes[1].getText());
         double c = Double.parseDouble(gui.inputboxes[2].getText());
         
-        float answer1 = (float) (-b + Math.sqrt((b * b)-4 * a * c)/(2 * a));
-        float answer2 = (float) (-b - Math.sqrt((b * b)-4 * a * c)/(2 * a));
+        
+        
+        float answer1 = (float) (((-b) + Math.sqrt(((b * b)-(4 * a * c))))/(2 * a));
+        float answer2 = (float) (((-b) - Math.sqrt(((b * b)-(4 * a * c))))/(2 * a));
+        
+        
         
         gui.answerone.setText("" + answer1);
         gui.answertwo.setText("" + answer2);
