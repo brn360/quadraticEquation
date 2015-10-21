@@ -33,13 +33,15 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
             int num2;
             int num3;
             
-            num1 = (int)Math.floor(Math.random()*50 + 1);
-            num2 = (int)Math.floor(Math.random()*50 + 1);
-            num3 = (int)Math.floor(Math.random()*50 + 1);
+            num1 = (int)Math.floor(Math.random()*100-50);
+            num2 = (int)Math.floor(Math.random()*100-50);
+            num3 = (int)Math.floor(Math.random()*100-50);
             
             gui.inputboxes[0].setText("" + num1);
             gui.inputboxes[1].setText("" + num2);
             gui.inputboxes[2].setText("" + num3);
+            
+            gui.solvebutton.setEnabled(true);
     }
     
     public void startSolving() {
@@ -50,9 +52,9 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
         gui.manual.setEnabled(true);
         gui.random.setEnabled(true);
         
-        double a = Integer.parseInt("0" + gui.inputboxes[0].getText());
-        double b = Integer.parseInt("0" + gui.inputboxes[1].getText());
-        double c = Integer.parseInt("0" + gui.inputboxes[2].getText());
+        double a = Double.parseDouble(gui.inputboxes[0].getText());
+        double b = Double.parseDouble(gui.inputboxes[1].getText());
+        double c = Double.parseDouble(gui.inputboxes[2].getText());
         
         float answer1 = (float) (-b + Math.sqrt((b * b)-4 * a * c)/(2 * a));
         float answer2 = (float) (-b - Math.sqrt((b * b)-4 * a * c)/(2 * a));
