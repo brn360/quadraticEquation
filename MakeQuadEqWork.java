@@ -72,6 +72,32 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
         float answer1 = (float) (((-b) + Math.sqrt(((b * b)-(4 * a * c))))/(2 * a));
         float answer2 = (float) (((-b) - Math.sqrt(((b * b)-(4 * a * c))))/(2 * a));
         
+        //Randomness
+        if(answer1 = 420) {
+            gui.answerone.setText("Dank Memes");
+        }
+        if(answer2 = 420) {
+            gui.answertwo.setText("Dank Memes");
+        }
+        if(answer1 = 9) {
+            gui.answerone.setText("Mr. Skeltal");
+        }
+        if(answer2 = 9) {
+            gui.answertwo.setText("Mr. Skeltal");
+        }
+        if(answer1 = 69) {
+            gui.answerone.setText("");
+        }
+        if(answer2 = 69) {
+            gui.answertwo.setText("");
+        }
+        if(answer1 = .81) {
+            gui.answerone.setText("Asadi");
+        }
+        if(answer2 = .81) {
+            gui.answertwo.setText("Asadi");
+        }
+        
         //Sets the answers to the textfields
         gui.answerone.setText("" + answer1);
         gui.answertwo.setText("" + answer2);
