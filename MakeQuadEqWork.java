@@ -115,6 +115,12 @@ public class MakeQuadEqWork implements ActionListener, Runnable {
             easteregg = "Asadi";
             System.out.println("Working");
         }
+        if(answer1 == 47) {
+            easteregg = "Lamborghinis";
+        }
+        if(answer2 == 47) {
+            easteregg = "Lamborghinis";
+        }
     }
     
     //The code that runs when the reset button is clicked
